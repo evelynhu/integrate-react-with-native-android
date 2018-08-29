@@ -2,10 +2,17 @@ import React from 'react';
 import {AppRegistry, StyleSheet, Text, View} from 'react-native';
 
 class HelloWorld extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      greeting: props.greeting,
+    }
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.hello}>Hello, World</Text>
+        <Text style={styles.hello}>{ this.state.greeting }</Text>
       </View>
     );
   }
